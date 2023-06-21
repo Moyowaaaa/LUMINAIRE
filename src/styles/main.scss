@@ -1,0 +1,39 @@
+@import "./base/generic";
+@import "./base/normalize";
+
+
+
+@font-face {
+    font-family:"marope-bold" ;
+    src:  url('../assets/fonts/manrope-bold.otf');
+    font-display: swap; 
+}
+
+@font-face {
+    font-family:"marope-regular" ;
+    src:  url('../assets/fonts/manrope-regular.otf');
+    font-display: swap; 
+}
+
+
+@font-face {
+    font-family:"grotesk-bold" ;
+    src:  url('../assets/fonts/SpaceGrotesk-Bold.otf');
+    font-display: swap; 
+}
+@font-face {
+    font-family:"grotesk-regular" ;
+    src:  url('../assets/fonts/SpaceGrotesk-Regular.otf');
+    font-display: swap; 
+}
+@font-face {
+    font-family:"grotesk-medium" ;
+    src:  url('../assets/fonts/SpaceGrotesk-Medium.otf');
+    font-display: swap; 
+}
+
+@font-face {
+    font-family:"grotesk-light" ;
+    src:  url('../assets/fonts/SpaceGrotesk-Light.otf');
+    font-display: swap; 
+}
