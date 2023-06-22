@@ -46,7 +46,9 @@
 
 <style lang="scss" scoped>
 .titleSection {
- 
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 1rem 10rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -57,6 +59,7 @@
 
     &__title-container{
         color:white;
+        padding-top: 2rem;
         width: 100%;
    
         font-family: "marope-regular";
@@ -152,7 +155,7 @@ height: auto;
             img {
                 height: 100%;
                 width: 100%;
-                object-fit: cover;
+                object-fit:cover;
                 border-radius: 10px;
             }
 

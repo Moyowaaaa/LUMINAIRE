@@ -40,6 +40,9 @@
 <style scoped lang="scss">
 .navbar{
     width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 1rem 10rem;
   
 
     box-sizing: border-box;
