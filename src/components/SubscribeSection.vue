@@ -64,6 +64,7 @@
         right: 0;
         top: 4rem;
         width: 30rem !important;
+        
       }
 
       .thick {
