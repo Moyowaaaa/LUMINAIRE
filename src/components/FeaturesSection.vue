@@ -26,7 +26,7 @@ Optimal Balance</h1>
 </div>
 
         </div>
-        <img src="../assets/images/polestarPhoto11md.png" />
+        <img src="../assets/images/polestarphoto11.webp" />
 </div>
     
 
@@ -34,7 +34,14 @@ Optimal Balance</h1>
 
 
     <div class="featuresSection__showcase-container--bottom-section">
+    <div class="featuresSection__showcase-container--bottom-section__left-box">
+        <img src="../assets/images/faraday.webp" alt=""/>
+        </div>
 
+    <div class="featuresSection__showcase-container--bottom-section__right-box">
+
+        </div>
+        
 
 </div>  
 
@@ -163,7 +170,32 @@ height: 0.99919rem;
 
 
         &--bottom-section{
-            border: 2px solid blue;
+           
+            display: flex;
+            height: 30rem;
+
+
+            &__left-box{
+                width: 65%;
+               
+                
+
+                img{
+height: 100%;
+width:100%;
+object-fit: cover;
+border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                }
+            }
+            &__right-box{
+                width: 35%;
+                padding:2rem;
+               
+                background-color: #DBFF00;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
         }
     }
 

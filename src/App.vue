@@ -6,6 +6,7 @@
 <ShowcaseSection/>
 <FeaturesSection />
 <HeroSection />
+<NewsSection/>
 <SubscribeSection />
 <Footer />
 
@@ -25,6 +26,7 @@ import HeroSection from './components/HeroSection.vue';
 import FeaturesSection from './components/FeaturesSection.vue';
 import Footer from './components/Footer.vue';
 import SubscribeSection from './components/SubscribeSection.vue';
+import NewsSection from './components/NewsSection.vue';
 
 </script>
 
