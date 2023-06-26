@@ -20,7 +20,7 @@
         </div>  
 
         <div class="foot">
-            <p>2022 Luminaire. All right reserved.</p>
+            <p>{{currentYear}} Luminaire. All right reserved.</p>
             <p>Privacy Policy</p>
             <p>Terms of Service</p>
             <p>Cookies Settings</p>
@@ -31,7 +31,10 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 
+
+let currentYear = ref<number | null>(new Date().getFullYear())
 </script>
 
 <style scoped lang="scss">

@@ -9,6 +9,40 @@
 <div class="featuresSection__showcase-container--top-section">
 <div class="featuresSection__showcase-container--top-section__left-box">
 
+    <div class="cross">
+        <img src="../assets/images/horizontalLinelong.png" />
+        <img src="../assets/images/horizontalLinelong.png" />
+
+    </div>
+
+<div class="featuresSection__showcase-container--top-section__left-box--text-container">
+  
+
+    <h1>Functional 
+Aesthetics</h1>
+
+<p>A mission to find the optimal 
+balance between cooling and performance to withstand its 
+inevitably heavier weight.</p>
+</div>
+
+
+<img
+          src="../assets/images/horizontalLineThick.png"
+          alt=""
+          class="thick"
+        />
+
+
+
+<div class="discover">
+                <p>Discover</p>
+                <img src="../assets/images/blackRightArrow.svg" alt=""/>
+</div>
+
+
+
+
     </div>
     <div class="featuresSection__showcase-container--top-section__right-box">
 
@@ -39,6 +73,36 @@ Optimal Balance</h1>
         </div>
 
     <div class="featuresSection__showcase-container--bottom-section__right-box">
+    <div class="featuresSection__showcase-container--bottom-section__right-box--text-container">
+        <h1>Electrifying 
+Experience</h1>
+
+<p>Integrating high performance technology into a 
+new design.</p>
+        </div>
+
+
+        <img
+          src="../assets/images/horizontalLineThick.png"
+          alt=""
+          class="thick"
+        />
+
+
+
+        <div class="discover">
+                <p>Discover</p>
+                <img src="../assets/images/blackRightArrow.svg" alt=""/>
+</div>
+
+
+<div class="cross">
+        <img src="../assets/images/horizontalLinelong.png" />
+        <img src="../assets/images/horizontalLinelong.png" />
+
+    </div>
+
+
 
         </div>
         
@@ -95,9 +159,73 @@ Optimal Balance</h1>
 
             &__left-box{
                 width: 30%;
-               
+                position: relative;
                 background-color: #DBFF00;
+                display: flex;
+                flex-direction: column;
                 border-radius: 10px;
+                gap: 2rem;
+
+                &--text-container{
+                    padding-left: 2rem;
+                    padding-right: 2rem;
+                    color:black;
+                    padding-top: 2rem;
+
+                    h1{
+                        font-family: "grotesk-bold";
+                    }
+                    p{
+                        font-family: "marope-regular";
+                        
+                    }
+                }
+
+                .cross{
+                    position: relative;
+                    top: 3rem;
+                    
+                    top:2rem;
+                    right: 0;
+
+
+                    img{
+                        &:nth-child(1){
+                            width: 8rem;
+                            height: 0.15rem;
+                            
+                            position: absolute;
+                            right: 0;
+                        }
+                        &:nth-child(2){
+                        position: absolute;
+                        right:1rem;
+                        height: 0.15rem;
+                            width: 5rem;
+                            rotate: 90deg;
+                            
+                        }
+                    }
+                }
+                .discover{
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    position: absolute;
+                    bottom: 2rem;
+                    left:2rem;
+                    color:black;
+                    img{
+                        width: 2.5rem;
+                    }
+                }
+                .thick {
+                    position: relative;
+                    
+        height: 0.4rem;
+        width:5rem !important;
+      }
+
             }
 
 
@@ -190,11 +318,67 @@ border-top-left-radius: 10px;
             }
             &__right-box{
                 width: 35%;
-                padding:2rem;
                
+                display: flex;
+                flex-direction: column;
+                position: relative;
                 background-color: #DBFF00;
                 border-top-right-radius: 10px;
                 border-bottom-right-radius: 10px;
+
+                &--text-container{
+                    padding: 5rem 2rem;
+                    color:black;
+                }
+
+
+                .discover{
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    position: absolute;
+                    bottom: 2rem;
+                    left:2rem;
+                    color:black;
+                    img{
+                        width: 2.5rem;
+                    }
+                }
+                .thick {
+                    position: relative;
+                    bottom:2rem;
+        height: 0.4rem;
+        width:5rem !important;
+      }
+
+
+      .cross{
+                    position: absolute;
+                    
+                    bottom:2.5rem;
+                    right: 0;
+
+
+                    img{
+                        &:nth-child(1){
+                            width: 8rem;
+                            height: 0.15rem;
+                            
+                            position: absolute;
+                            right: 0;
+                        }
+                        &:nth-child(2){
+                        position: absolute;
+                        right:1rem;
+                        height: 0.15rem;
+                            width: 5rem;
+                            rotate: 90deg;
+                            
+                        }
+                    }
+                }
+
+
             }
         }
     }

@@ -47,7 +47,7 @@ button {
   ::-webkit-scrollbar {
     width: 4px;
     scroll-behavior: smooth;
-    background:#8C8C8C
+    background:black   
     
    
   }
@@ -57,6 +57,6 @@ button {
     border-radius: 20px;
     border: 3px solid var(--chakra-colors-primary);
     height: 2px;
-    background: linear-gradient(180deg, #1b1b1b 0%, #DBFF00 149%);
+    background: linear-gradient(180deg, #DBFF00 0%, #DBFF00 149%);
   }
   
