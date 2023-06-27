@@ -11,7 +11,7 @@
                 <button>Reserve your own</button>
 
 
-                <div class="close-btn"   ref="closebtnRef">
+                <div class="close-btn"   ref="closebtnRef" @click="openMenu">
       
       <svg viewBox="0 0 12 10" class="hamburger" height="40px" width="40px">
           <path d="M10,2 L2,2" class="bar-1" id="bar-1"></path>
@@ -34,6 +34,47 @@
 </template>
 
 <script setup lang="ts">
+import { gsap } from 'gsap';
+import { onMounted } from 'vue';
+var menuTl = gsap.timeline()
+
+
+
+onMounted(() => {
+    menuTl.to('.bar-1', {
+        duration:0.5,
+        attr:{d: "M8,2 L2,8"},
+	x:1,
+	ease: "power3.inOut"
+    }, 'start')
+
+    menuTl.to('.bar-2',{
+	autoAlpha: 0,
+    duration:0.5
+}, 'start')
+
+    menuTl.to('.bar-3',{
+	attr:{d: "M8,8 L2,2"},
+    duration:0.5,
+	x:1,
+	ease: "power3.inOut",
+    stroke:'#DBFF00'
+    
+}, 'start')
+
+menuTl.to('.nav-button', {
+    display:"none",
+    delay:0.6,
+})
+
+menuTl.reverse()
+
+})
+
+const openMenu = () => {
+    menuTl.reversed(!menuTl.reversed())
+
+}
 
 </script>
 
@@ -42,7 +83,7 @@
     width: 100%;
     max-width: 100rem;
     margin: 0 auto;
-    padding: 1rem 10rem;
+    padding: 1rem 5rem;
   
 
     box-sizing: border-box;
@@ -71,7 +112,7 @@
         font-size: 1.125rem;
     }
     .hamburger{
-       
+        cursor: pointer;
 
         #bar-1 {
             fill: none;
@@ -90,8 +131,21 @@
 
 @media screen and (max-width:485px) {
     .navbar{
+        padding:1rem;
         &__container{
-            display: none;
+           
+            width:100%;
+
+            div{
+                img{
+                    width: 7rem;
+                }
+            }
+
+
+            &--right-container{
+                display: none;
+            }
         }
     }
 }

@@ -48,7 +48,7 @@
 .titleSection {
     max-width: 100rem;
     margin: 0 auto;
-    padding: 1rem 10rem;
+    padding: 1rem 5rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -70,6 +70,7 @@
 
         p{
             font-size: 24px;
+            
         }
 
 
@@ -79,7 +80,7 @@
 background-color: #DBFF00;
 color:black;
         border-radius: 5px;
-        padding: 0.5rem 2rem    ;
+        padding: 1rem 4rem    ;
         }
     }
 }
@@ -121,6 +122,11 @@ color:black;
 height: auto;
             }
 
+            @media screen and (min-width:500px) and (max-width:900px) {
+                height: 100%;
+            }
+          
+
         }
 
         &--longwidth-shorterheight {
@@ -143,6 +149,15 @@ height: auto;
             }
             @media (max-width: 485px) {
 height: auto;
+
+p{
+    padding:1rem 0;
+    max-width: 100%;
+}
+            }
+            
+            @media screen and (min-width:500px) and (max-width:900px) {
+                height: 100%;
             }
 
         }
@@ -161,6 +176,10 @@ height: auto;
 
             @media (max-width: 485px) {
 height: auto;
+            }
+            @media screen and (min-width:500px) and (max-width:900px) {
+                height: 100%;
+                
             }
 
         }
@@ -206,7 +225,16 @@ height: auto;
             }
 
             @media (max-width: 485px) {
+                font-size: 2rem;
 height: auto;
+
+div{
+    &:nth-child(2) {
+padding-left: 4rem;
+}
+}
+
+
             }
 
         }
@@ -243,7 +271,16 @@ height: auto;
             font-size: 1.25rem;
 
             @media (max-width: 485px) {
+                font-size: 1rem;
+                p{
+                    padding: 0.5rem;
+                }
+                
 height: auto;
+            }
+
+            @media screen and (min-width:500px) and (max-width:900px) {
+                display: none;
             }
 
             img {
@@ -267,6 +304,33 @@ height: auto;
 
     img{
         object-fit: contain !important;
+    }
+
+    .titleSection{
+        width: 100%;
+        padding:1rem;
+        font-size: 1.5rem;
+
+        &__title-container{
+            font-size: 1.6rem;
+            text-align: center;
+            p{
+                font-size: 1rem;
+            }
+        }
+    }
+
+}
+
+
+@media (min-width: 500px) and (max-width:900px) {
+    .gridContainer__container {
+        grid-template-areas:
+            "a a b b"
+            "c c d d"
+            "e e f f"
+    
+    
     }
 
 }

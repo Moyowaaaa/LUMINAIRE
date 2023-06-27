@@ -20,10 +20,10 @@
         </div>  
 
         <div class="foot">
-            <p>{{currentYear}} Luminaire. All right reserved.</p>
-            <p>Privacy Policy</p>
-            <p>Terms of Service</p>
-            <p>Cookies Settings</p>
+            <p >{{currentYear}} Luminaire. All right reserved.</p>
+            <p >Privacy Policy</p>
+            <p >Terms of Service</p>
+            <p >Cookies Settings</p>
         </div>
 
 
@@ -41,7 +41,7 @@ let currentYear = ref<number | null>(new Date().getFullYear())
 .footer-section{
     max-width: 100rem;
     margin: 0 auto;
-    padding: 1rem 10rem;
+    padding: 1rem 5rem;
     margin-top: 5rem;
     display: flex;
     flex-direction: column;
@@ -60,6 +60,18 @@ let currentYear = ref<number | null>(new Date().getFullYear())
 font-size: 20px;
 font-family: "grotesk-bold";
 font-weight: 700;
+
+
+p{
+    color: #DBFF00;
+    transition: color 1s;
+
+    
+    &:hover{
+    color: black;
+    cursor: pointer;
+}
+}
 
     }
 
@@ -86,12 +98,52 @@ font-weight: 700;
         
 
         p{
-            text-decoration: underline;
+            // text-decoration: underline;
             color: #DBFF00;
 font-size: 14px;
 font-family: "marope-regular";
 font-weight: 400;
+
+
         }
     }
 }
+
+@media screen and (max-width:490px) {
+    .footer-section{
+        width:100%;
+        padding:0;
+        
+        
+
+        .logo{
+            width: 7rem;
+        }
+        
+
+        &__links-container{
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 1rem;
+
+        }
+    }
+
+    .foot{
+        flex-wrap: wrap;
+      
+
+    }
+}
+
+@media screen and (min-width:500px) and (max-width:900px) {
+    .footer-section{
+        width:90%;
+        padding:0;
+
+    }
+}
+
+
+
 </style>

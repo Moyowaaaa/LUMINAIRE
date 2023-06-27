@@ -58,7 +58,7 @@ const news = [
     min-height: 100vh;
     max-width: 100rem;
     margin: 0 auto;
-    padding: 1rem 10rem;
+    padding: 1rem 5rem;
     
     font-family: "grotesk-regular";
 
@@ -177,6 +177,58 @@ background: #DBFF00;
             }
 
 
+            @media screen and (max-width:485px) {
+                .newsSection{
+                    max-width: 100%;
+                    padding:0;
+
+                    &__title-container{
+                        padding: 0 1rem;
+                        
+                        h1{
+                            font-size: 2rem;
+                            text-align: center;
+                            padding: 2rem 0;
+                        }
+                    }
+
+                    &__news-container{
+                        flex-direction: column;
+
+                        &--container{
+                            width: 95%;
+                            margin: auto
+                        }
+                    }
+                };
+            }
+
+
+            @media screen and (min-width:500px) and (max-width:900px) {
+                .newsSection{
+                    max-width: 100%;
+
+                    &__title-container{
+                        padding: 2rem 0;
+                    }
+
+                    &__news-container{
+                 flex-wrap: wrap;
+                margin: 0;
+                gap:4rem;
+
+                        &--container{
+                            width: 100%;
+                            margin: 0;
+                            &__ImageContainer{
+                                height: 15rem;
+                            }
+
+                        }
+                    }
+                }
+
+            }
 
 
 </style>

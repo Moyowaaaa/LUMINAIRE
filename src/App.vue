@@ -4,10 +4,9 @@
       <Navbar />
 <TitleSection />
 <ShowcaseSection/>
-<FeaturesSection />
-<HeroSection />
+<!-- <FeaturesSection /> -->
 <NewsSection/>
-<SubscribeSection />
+<SubscribeSection /> 
 <Footer />
 
   

@@ -46,6 +46,13 @@
 
         </div>
 
+
+        <div class="showcase-section__cars-container-mobile">
+            <img src="../assets/images/rivian5md.png" alt=""/>
+
+
+            </div>
+
         <div class="discover">Discover <img src="../assets/images/greenRightArrow.svg" alt=""/></div>
 
 
@@ -70,7 +77,7 @@
     &__container{
         max-width: 100rem;
     margin: 0 auto;
-    padding: 1rem 10rem;
+    padding: 1rem 5rem;
 
     &--stats-container{
         padding-left: 10rem;
@@ -125,6 +132,10 @@ top:-30rem;
 z-index: 10;
         }
     }
+
+    &__cars-container-mobile{
+        display: none;
+    }
 }
 
 .discover{
@@ -134,10 +145,54 @@ z-index: 10;
     gap: 1rem;
     color: #DBFF00;
 font-size: 1.25rem;
-padding-left: 20rem;
+padding-left: 15rem;
 
     img{
         width: 2.5rem;
+    }
+}
+
+
+@media screen and (max-width:900px) {
+    .showcase-section{
+        padding:0;
+        padding: 4rem 0;
+        
+
+        &__container{
+            padding: 0 2rem;
+            
+            h1{
+                text-align: center;
+            }
+
+
+            max-width: 100%;
+            &--stats-container{
+        padding-left: 0;
+
+        &__stat-container{
+            width: 100%;
+        }
+
+            }
+
+        }
+        
+
+        &__cars-container{
+            display: none;
+        }
+
+        &__cars-container-mobile{
+            display: flex;
+            padding: 2rem 0;
+        }
+    }
+
+    .discover{
+        padding-top: 0rem;
+        padding-left: 2rem;
     }
 }
 </style>

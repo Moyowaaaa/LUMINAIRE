@@ -123,7 +123,7 @@ new design.</p>
     min-height: 100vh;
     max-width: 100rem;
     margin: 0 auto;
-    padding: 1rem 10rem;
+    padding: 1rem 5rem;
  
     margin-top: 10rem;
     font-family: "grotesk-regular";
@@ -131,7 +131,7 @@ new design.</p>
 
     &__title-container{
         padding-top:   2rem  ;
-        padding-bottom:2rem ;
+        padding-bottom:2.5rem ;
         padding-left: 10rem;
 
         p{color: #DBFF00;}
@@ -154,7 +154,7 @@ new design.</p>
             display: flex;
             
             gap:2rem;
-        height: 30rem;
+        height: 35rem;
 
 
             &__left-box{
@@ -174,6 +174,7 @@ new design.</p>
 
                     h1{
                         font-family: "grotesk-bold";
+                        font-size: 2.5rem;
                     }
                     p{
                         font-family: "marope-regular";
@@ -250,17 +251,18 @@ new design.</p>
                     position: absolute;
                     z-index: 40;
                     width: 100%;
-                    padding: 2rem;
+                   
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
 
                     margin: 0 auto;
-                    padding: 1.5rem auto;
-                    position: relative;
-                    top:0;
+                    padding: 1.5rem 2rem;
+                    // position: relative;
+                    top:2rem;
                 
                     &__text-box{
+                        
                         h1{
                             font-family: "grotesk-bold";
                           
@@ -269,8 +271,8 @@ new design.</p>
 
                         p{
                             font-family: "marope-regular";
-                            width: 35rem;
-                            font-size: 1.25rem;
+                            width: 30rem;
+                            
                         }
                     }
 
@@ -300,7 +302,7 @@ height: 0.99919rem;
         &--bottom-section{
            
             display: flex;
-            height: 30rem;
+            height: 40rem;
 
 
             &__left-box{

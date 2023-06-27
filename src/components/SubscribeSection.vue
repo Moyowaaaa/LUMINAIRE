@@ -52,7 +52,7 @@
       height: 100%;
       width: 55%;
       background-color: #dbff00;
-      padding: 1rem 10rem;
+      padding: 1rem 5rem;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -131,6 +131,22 @@
     //     width: 50%;
     //     object-fit: cover;
     // }
+  }
+}
+
+@media screen and (max-width:485px) {
+  .subscribeSection{
+    &__container{
+      flex-direction: column;
+      height: max-content;
+
+      &--text-container{
+        padding:0;
+        width: 100%;
+      }
+    }
+
+
   }
 }
 </style>
