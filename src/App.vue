@@ -4,7 +4,7 @@
       <Navbar />
 <TitleSection />
 <ShowcaseSection/>
-<!-- <FeaturesSection /> -->
+<FeaturesSection />
 <NewsSection/>
 <SubscribeSection /> 
 <Footer />
