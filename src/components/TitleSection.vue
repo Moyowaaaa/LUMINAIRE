@@ -317,6 +317,9 @@ height: auto;
             p{
                 font-size: 1rem;
             }
+            button{
+                padding: 0.5rem 1rem;
+            }
         }
     }
 

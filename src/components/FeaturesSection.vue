@@ -155,8 +155,7 @@ new design.</p>
             
             gap:2rem;
         height: 35rem;
-
-
+        
             &__left-box{
                 width: 30%;
                 position: relative;
@@ -165,6 +164,8 @@ new design.</p>
                 flex-direction: column;
                 border-radius: 10px;
                 gap: 2rem;
+
+     
 
                 &--text-container{
                     padding-left: 2rem;
@@ -385,6 +386,105 @@ border-top-left-radius: 10px;
         }
     }
 
+}
 
+@media screen and (max-width:1020px) {
+    .featuresSection{
+        padding: 2rem 0;
+        width:100%;
+        max-width: 100%;
+       
+
+
+        &__title-container{
+            padding:1rem;
+
+            h1{
+                font-size: 1.8rem;
+                text-align: center;
+            }
+        }
+
+
+        &__showcase-container{
+            gap:0;
+
+            &--top-section{
+                flex-direction: column;
+                height: max-content;
+
+                &__left-box{
+                width: 100%;
+                padding: 5rem 1rem;
+                
+                border-radius: 0;
+               
+
+
+                &--text-container{
+                    padding:0;
+                }
+                
+
+                
+                }
+
+                &__right-box{
+                    width: 100%;
+                height: 60rem;
+                border-radius: 0;
+
+                display: none;
+
+                }
+
+            }
+
+            .cross{
+                img{
+                    &:nth-child(1), &:nth-child(2) {
+                    position: relative !important;
+                    width: 4rem !important;
+                    display: none;
+                   
+                }
+
+            }
+            }
+            .thick{
+                display: none;
+            }
+
+
+            
+
+
+
+            &--bottom-section{
+                flex-direction: column;
+
+
+                &__left-box{
+                width: 100%;
+                height: 60rem;
+                border-radius: 0;
+
+                }
+
+                &__right-box{
+                    width: 100%;
+                height: 60rem;
+                border-radius: 0;
+
+
+
+                }
+
+
+            }
+        }
+
+        
+    }
 }
 </style>
