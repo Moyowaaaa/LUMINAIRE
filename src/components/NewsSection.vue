@@ -181,6 +181,7 @@ background: #DBFF00;
                 .newsSection{
                     max-width: 100%;
                     padding:0;
+                    margin-top: 15vh;
 
                     &__title-container{
                         padding: 0 1rem;
