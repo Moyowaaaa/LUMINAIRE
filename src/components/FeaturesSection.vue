@@ -393,7 +393,9 @@ border-top-left-radius: 10px;
         padding: 2rem 0;
         width:100%;
         max-width: 100%;
-       
+        margin:2rem 0;
+        height: max-content;
+      
 
 
         &__title-container{
