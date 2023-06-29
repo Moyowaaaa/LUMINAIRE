@@ -233,4 +233,19 @@ background: #DBFF00;
             }
 
 
+
+            @media only screen
+  and (device-width: 375px)
+  and (device-height: 812px)
+  and (-webkit-device-pixel-ratio: 3) {
+    /* CSS rules specific to iPhone X */
+    .newsSection{
+        margin-top: 30vh !important;
+    }
+
+
+}
+
+
+
 </style>
