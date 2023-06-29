@@ -240,7 +240,7 @@ background: #DBFF00;
   and (-webkit-device-pixel-ratio: 3) {
     /* CSS rules specific to iPhone X */
     .newsSection{
-        margin-top: 30vh !important;
+        margin-top: 50rem !important;
     }
 
 
