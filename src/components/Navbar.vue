@@ -64,7 +64,7 @@ onMounted(() => {
 
 menuTl.to('.nav-button', {
     display:"none",
-    delay:0.6,
+    // delay:0.6,
 })
 
 menuTl.reverse()
