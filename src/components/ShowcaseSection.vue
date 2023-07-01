@@ -2,7 +2,7 @@
     <div class="showcase-section">
 
     <div class="showcase-section__container">
-<h1>Pick your Dream Car</h1>
+<h1 class="title">Pick your Dream Car</h1>
 
 <div class="showcase-section__container--stats-container">
 <div class="showcase-section__container--stats-container__stat-container">
@@ -62,6 +62,36 @@
 </template>
 
 <script setup lang="ts">
+import { gsap } from 'gsap';
+import { onMounted } from 'vue';
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger)
+
+
+// onMounted(() => {
+    
+//     let tl = gsap.timeline({
+//         scrollTrigger: {
+//             trigger:".showcase-section",
+//             start: 'top center',
+//             end:'top +=30',
+//             markers:true,
+//             scrub:0.1
+//         }
+//     })
+
+//     tl.from('.title',{
+//         opacity:0,
+//         ease:"power3.inOut",
+//         y:300
+//     })
+
+    
+    
+
+
+    
+// })
 
 </script>
 

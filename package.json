@@ -10,8 +10,10 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^0.2.28",
     "gsap": "^3.11.4",
     "locomotive-scroll": "^4.1.4",
+    "loconative-scroll": "https://github.com/quentinhocde/loconative-scroll",
     "pinia": "^2.0.26",
     "sass": "^1.57.1",
     "vue": "^3.2.45",

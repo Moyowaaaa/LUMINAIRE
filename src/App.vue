@@ -26,6 +26,48 @@ import FeaturesSection from './components/FeaturesSection.vue';
 import Footer from './components/Footer.vue';
 import SubscribeSection from './components/SubscribeSection.vue';
 import NewsSection from './components/NewsSection.vue';
+import LocomotiveScroll from "locomotive-scroll";
+import { onMounted } from 'vue';
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+
+
+onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger)
+  const locoScroll:any = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]") as HTMLDivElement,
+        smooth: true,
+        lerp: 0.07,
+    });
+
+    locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy("[data-scroll-container]", {
+  scrollTop(value) {
+    return arguments.length
+      ? locoScroll.scrollTo(value, 0, 0)
+      : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return {
+      top: 0,
+      left: 0,
+      width: window.innerWidth,
+      height: window.innerHeight
+    };
+  }
+});
+
+
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+ScrollTrigger.refresh();
+
+
+    
+})
 
 </script>
 

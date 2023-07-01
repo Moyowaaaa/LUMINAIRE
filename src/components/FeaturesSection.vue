@@ -115,6 +115,32 @@ new design.</p>
 </template>
 
 <script setup lang="ts">
+import { gsap } from 'gsap';
+import { onMounted } from 'vue';
+
+
+// onMounted(() => {
+//     const tl = gsap.timeline({
+//     scrollTrigger:{
+//         trigger:'.featuresSection__title-container',
+//         start: 'top center',
+//             end:'top +=150',
+//             markers:true,
+
+//         scrub:1.2
+//     }
+// })
+
+// tl.from('.featuresSection__title-container',{
+//     opacity:0,
+//     y:100,
+//     ease:"power3.inOut",
+//     duration:1.2
+// })
+// })
+
+
+
 
 </script>
 

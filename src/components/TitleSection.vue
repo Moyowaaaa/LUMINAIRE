@@ -4,7 +4,7 @@
             <h1>The Future is Electric.</h1>
 
             <p>Discover the new standard of luxury</p>
-            <button>Learn more</button>
+            <button>Reserve you own</button>
         </div>
 
         <div class="gridContainer">
@@ -80,7 +80,7 @@
 background-color: #DBFF00;
 color:black;
         border-radius: 5px;
-        padding: 1rem 4rem    ;
+        padding: 1rem 2rem    ;
         }
     }
 }
@@ -280,7 +280,7 @@ height: auto;
             }
 
             @media screen and (min-width:500px) and (max-width:900px) {
-                display: none;
+                
             }
 
             img {

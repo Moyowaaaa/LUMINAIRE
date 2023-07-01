@@ -8,7 +8,7 @@
 
 
             <div class="navbar__container--right-container">
-                <button>Reserve your own</button>
+                
 
 
                 <div class="close-btn"   ref="closebtnRef" @click="openMenu">
@@ -110,6 +110,18 @@ const openMenu = () => {
         font-family: "grotesk-regular";
         border: 1px solid #DBFF00;
         font-size: 1.125rem;
+
+        &:hover {
+    transition: 0.5s;
+    box-shadow: 6px 3px 0 transparent;
+    background: linear-gradient(150deg,  #A53DE2 110.61%, #FF3C5F 155.21%);
+    cursor: pointer;
+    color:white;
+    scale:1.1
+}
+
+
+
     }
     .hamburger{
         cursor: pointer;
