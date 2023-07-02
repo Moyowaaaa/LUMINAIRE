@@ -1,14 +1,14 @@
 <template>
     <div class="showcase-section">
 
-    <div class="showcase-section__container">
+    <div class="showcase-section__container" data-scroll data-scroll-speed="-1" >
 <h1 class="title">Pick your Dream Car</h1>
 
 <div class="showcase-section__container--stats-container">
 <div class="showcase-section__container--stats-container__stat-container">
 <img src="../assets/images/statLine.svg" alt=""/>
 <p>EPA gas range</p>
-<p>32 mpg</p>
+<p><span class="data">32</span> mpg</p>
     </div>  
 
     <div class="showcase-section__container--stats-container__stat-container">
@@ -21,7 +21,8 @@
     <div class="showcase-section__container--stats-container__stat-container">
 <img src="../assets/images/statLine.svg" alt=""/>
 <p>Max power</p>
-<p>1,200 hp</p>
+
+<p><span class="data">1200</span> hp</p>
     </div>  
 
 
@@ -34,7 +35,7 @@
 
 
 
-        <div class="showcase-section__cars-container">
+        <div class="showcase-section__cars-container" data-scroll-speed="2" data-scroll>
             <img src="../assets/images/rivian12md.png" alt=""/>
             <img src="../assets/images/rivian5md.png" alt=""/>
 
@@ -53,7 +54,7 @@
 
             </div>
 
-        <div class="discover">Discover <img src="../assets/images/greenRightArrow.svg" alt=""/></div>
+        <div class="discover" id="discover">Discover <img src="../assets/images/greenRightArrow.svg" alt=""/></div>
 
 
 
@@ -65,7 +66,69 @@
 import { gsap } from 'gsap';
 import { onMounted } from 'vue';
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { intersectionObserver } from '@/animation/useIntersectionObserver';
 gsap.registerPlugin(ScrollTrigger)
+
+onMounted(() => {
+
+    const discoverBoxes = (document.querySelectorAll('#discover'))
+    
+    discoverBoxes.forEach((discoverBox) => {
+        discoverBox.addEventListener('mouseenter',() => {
+            gsap.to(discoverBox,{
+                x:30,
+            ease:"power3.inOut",
+            duration:1,
+            })
+        })
+
+        discoverBox.addEventListener('mouseleave',() => {
+            gsap.to(discoverBox,{
+                x:0,
+            ease:"power3.inOut",
+            duration:1,
+            })
+        })
+    })
+
+
+  const items = Array.from(document.querySelectorAll(".data"));
+  const ctx = gsap.context(() => {
+    items.forEach((item) => {
+        intersectionObserver(item,{threshold: 0.1 }).then(() => {
+      gsap.from(item, {
+        textContent: 0,
+        duration: 2,
+        ease: "power3.inOut",
+      
+        snap: { textContent: 1 },
+        stagger: {
+          each: 1.0,
+          onUpdate: () => { // Use arrow function to preserve lexical scope
+            const targets = (this as unknown as any).targets();
+            if (targets.length > 0) {
+              const target = targets[0];
+              target.innerHTML = numberWithCommas(
+                Math.ceil(target.textContent)
+              );
+            }
+          },
+        },
+      });
+    });
+})
+  });
+
+  return () => ctx.revert();
+
+  function numberWithCommas(x: number) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+ 
+
+});
+
 
 
 // onMounted(() => {
@@ -176,6 +239,7 @@ z-index: 10;
     color: #DBFF00;
 font-size: 1.25rem;
 padding-left: 15rem;
+cursor: pointer;
 
     img{
         width: 2.5rem;

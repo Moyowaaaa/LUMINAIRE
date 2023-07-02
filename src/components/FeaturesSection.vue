@@ -1,11 +1,11 @@
 <template>
     <div class="featuresSection">
-        <div class="featuresSection__title-container" data-scroll>
+        <div class="featuresSection__title-container" >
             <p>Features</p>
             <h1>Our Promise To The Future</h1>
 </div>
 
-<div class="featuresSection__showcase-container">
+<div class="featuresSection__showcase-container"  data-scroll data-scroll-speed="-1">
 <div class="featuresSection__showcase-container--top-section">
 <div class="featuresSection__showcase-container--top-section__left-box">
 
@@ -35,8 +35,8 @@ inevitably heavier weight.</p>
 
 
 
-<div class="discover">
-                <p>Discover</p>
+<div class="discover" id="discover">
+                <p data-animation='paragraph'>Discover</p>
                 <img src="../assets/images/blackRightArrow.svg" alt=""/>
 </div>
 
@@ -51,11 +51,11 @@ inevitably heavier weight.</p>
 <h1>Finding <br/>
 Optimal Balance</h1>
 
-<p>Feel the road beneath you. See the sky above. Hear the music around you.</p>
+<p data-animation="paragraph">Feel the road beneath you. See the sky above. Hear the music around you.</p>
             </div>
 
-            <div class="text-container__discover">
-                <p>Discover</p>
+            <div class="text-container__discover" id="discover">
+                <p data-animation='paragraph'>Discover</p>
                 <img src="../assets/images/blackRightArrow.svg" alt=""/>
 </div>
 
@@ -90,8 +90,8 @@ new design.</p>
 
 
 
-        <div class="discover">
-                <p>Discover</p>
+        <div class="discover" id="discover">
+                <p data-animation='paragraph'>Discover</p>
                 <img src="../assets/images/blackRightArrow.svg" alt=""/>
 </div>
 
@@ -115,8 +115,46 @@ new design.</p>
 </template>
 
 <script setup lang="ts">
+import { intersectionObserver } from '@/animation/useIntersectionObserver';
 import { gsap } from 'gsap';
 import { onMounted } from 'vue';
+
+onMounted(() => {
+    const discoverBoxes = Array.from(document.querySelectorAll('#discover'))
+    
+    discoverBoxes.forEach((discoverBox) => {
+        discoverBox.addEventListener('mouseenter',() => {
+            gsap.to(discoverBox,{
+                x:30,
+            ease:"power3.inOut",
+            duration:1,
+            })
+        })
+
+        discoverBox.addEventListener('mouseleave',() => {
+            gsap.to(discoverBox,{
+                x:0,
+            ease:"power3.inOut",
+            duration:1,
+            })
+        })
+    })
+
+    const featuresSection = document.querySelector('.featuresSection')
+    // console.log(titleSection)
+
+    intersectionObserver(featuresSection,{threshold: 0.1 }).then(() => {
+gsap.from(featuresSection,{
+  opacity:0,
+  ease:"power3.inOut",
+  duration:1,
+  y:"5rem"
+})
+    })
+
+})
+
+
 
 
 // onMounted(() => {
@@ -173,6 +211,7 @@ import { onMounted } from 'vue';
         display: flex;
         flex-direction: column;
         gap:2rem;
+        margin-top: 4rem;
        
         
 
@@ -243,6 +282,8 @@ import { onMounted } from 'vue';
                     bottom: 2rem;
                     left:2rem;
                     color:black;
+                    cursor: pointer;
+
                     img{
                         width: 2.5rem;
                     }
@@ -310,6 +351,8 @@ import { onMounted } from 'vue';
                         align-items: center;
                         gap:1rem;
                         font-size: 1.25rem;
+                    cursor: pointer;
+
                     
 
                         img{
@@ -369,6 +412,7 @@ border-top-left-radius: 10px;
                     bottom: 2rem;
                     left:2rem;
                     color:black;
+                    cursor: pointer;
                     img{
                         width: 2.5rem;
                     }

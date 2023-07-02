@@ -3,9 +3,9 @@
     <!-- <img src="../assets/images/rivianSubscribe.png"/> -->
     <div class="subscribeSection__container">
       <div class="subscribeSection__container--text-container">
-        <img src="../assets/images/horizontalLinelong.png" class="light"/>
+        <img src="../assets/images/horizontalLinelong.png" id="lightHorizontalLine" class="light "/>
 
-        <div class="container">
+        <div class="container" data-scroll-speed="2" data-scroll>
           <h1>
             Stay up to speed
             <br />
@@ -18,13 +18,14 @@
 
           <input type="text" placeholder="Enter your email" />
 
-          <button>Sign Up</button>
+          <button class="btn-effect">Sign Up</button>
         </div>
 
         <img
           src="../assets/images/horizontalLineThick.png"
           alt=""
           class="thick"
+        
         />
       </div>
 
@@ -35,7 +36,39 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { intersectionObserver } from '@/animation/useIntersectionObserver';
+import { gsap } from 'gsap';
+import { onMounted } from 'vue';
+
+
+
+
+onMounted(() => {
+  const lightHorizontalLine = document.querySelector('#lightHorizontalLine')
+  const thickHorizontalLine = document.querySelector('#thickHorizontalLine')
+
+  const lines = Array.from(document.querySelectorAll('#lines'));
+  console.log(lines)
+
+
+intersectionObserver(lightHorizontalLine,{ threshold: 0.1 }).then(() => {
+gsap.to(lightHorizontalLine,{
+  width:"30rem",
+  duration:2,
+  ease:"power3.inOut"
+})
+
+})
+
+
+
+})
+
+
+
+
+</script>
 
 <style scoped lang="scss">
 .subscribeSection {
@@ -63,7 +96,7 @@
         position: absolute;
         right: 0;
         top: 4rem;
-        width: 30rem !important;
+        width: 0rem ;
         
       }
 
@@ -72,7 +105,7 @@
         left: 0 !important;
         bottom: 4rem !important;
         height: 1.2rem;
-        width: 10rem !important;
+        width: 5rem ;
       }
 
       .container {
@@ -238,4 +271,50 @@
 
   }
 }
+
+.btn-effect {
+    position: relative;
+    
+    cursor: pointer;
+    transition: color 350ms ease-in-out;
+  }
+  
+  .btn-effect::before,
+  .btn-effect::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    transform: scale(0);
+    transition: transform 350ms ease-in;
+    border-radius: 10px;
+  }
+  
+  .btn-effect::before {
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    left: -3px;
+    transform-origin: 0 100%;
+  }
+  
+  .btn-effect::after {
+    border-right: 3px solid black;
+    border-top: 3px solid black;
+    right: -3px;
+    transform-origin: 100% 0;
+  }
+  
+  .btn-effect:hover::after,
+  .btn-effect:hover::before {
+    transform: scale(1);
+  }
+  
+  .btn-effect:hover {
+    
+    background-color: transparent !important;
+    color: black !important;
+    border: none;
+  }
+  
 </style>

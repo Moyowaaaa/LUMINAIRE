@@ -21,7 +21,7 @@
 import TitleSection from './components/TitleSection.vue';
 import ShowcaseSection from './components/ShowcaseSection.vue';
 import Navbar from './components/Navbar.vue'
-import HeroSection from './components/HeroSection.vue';
+
 import FeaturesSection from './components/FeaturesSection.vue';
 import Footer from './components/Footer.vue';
 import SubscribeSection from './components/SubscribeSection.vue';
@@ -31,43 +31,59 @@ import { onMounted } from 'vue';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from '@studio-freight/lenis'
+import { split } from './animation/text'
 
 
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger)
-  const locoScroll:any = new LocomotiveScroll({
-        el: document.querySelector("[data-scroll-container]") as HTMLDivElement,
+  split();
+
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]") as HTMLDivElement,
         smooth: true,
         lerp: 0.07,
     });
 
-    locoScroll.on("scroll", ScrollTrigger.update);
-
-ScrollTrigger.scrollerProxy("[data-scroll-container]", {
-  scrollTop(value) {
-    return arguments.length
-      ? locoScroll.scrollTo(value, 0, 0)
-      : locoScroll.scroll.instance.scroll.y;
-  },
-  getBoundingClientRect() {
-    return {
-      top: 0,
-      left: 0,
-      width: window.innerWidth,
-      height: window.innerHeight
-    };
-  }
+    setTimeout(() => {
+        scroll.update();
+    }, 1000);
 });
 
 
+// onMounted(() => {
+//   gsap.registerPlugin(ScrollTrigger)
+//   const locoScroll:any = new LocomotiveScroll({
+//         el: document.querySelector("[data-scroll-container]") as HTMLDivElement,
+//         smooth: true,
+//         lerp: 0.07,
+//     });
 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+//     locoScroll.on("scroll", ScrollTrigger.update);
 
-ScrollTrigger.refresh();
+// ScrollTrigger.scrollerProxy("[data-scroll-container]", {
+//   scrollTop(value) {
+//     return arguments.length
+//       ? locoScroll.scrollTo(value, 0, 0)
+//       : locoScroll.scroll.instance.scroll.y;
+//   },
+//   getBoundingClientRect() {
+//     return {
+//       top: 0,
+//       left: 0,
+//       width: window.innerWidth,
+//       height: window.innerHeight
+//     };
+//   }
+// });
+
+
+
+// ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+// ScrollTrigger.refresh();
 
 
     
-})
+// })
 
 // const smoothScroll = ()=>{
 //   const lenis = new Lenis({

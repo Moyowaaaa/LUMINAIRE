@@ -4,11 +4,11 @@
             <p>News</p>
             <h1>Stories Behind The Wheel</h1>
 </div>
-<div class="newsSection__news-container">
+<div class="newsSection__news-container" >
 
 
-    <div class="newsSection__news-container--container" v-for="article in news">
-    <div class="newsSection__news-container--container__ImageContainer">
+    <div class="newsSection__news-container--container" v-for="(article, index) in news">
+    <div class="newsSection__news-container--container__ImageContainer" :key="index">
         <div class="image-container">
             <img :src=article.image :alt="article.title"/>
          </div>
@@ -29,9 +29,13 @@
         <div class="newsSection__news-container--container__discover">
                 <p>Discover</p>
                 <img src="../assets/images/greenRightArrow.svg" alt=""/>
+
+                <div class="underline"></div>
 </div>
 
+
     </div>
+    
 
 </div>
     </div>
@@ -41,6 +45,8 @@
 import image1 from '../assets/images/polestarphoto2.webp'
 import image2 from '../assets/images/polestarphoto16.webp'
 import image3 from '../assets/images/polestarphoto6.webp'
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
 
 
 const news = [
@@ -50,6 +56,80 @@ const news = [
 
 
 ]
+let newsContainer; 
+
+onMounted(() => {
+
+  newsContainer = Array.from(document.querySelectorAll('.newsSection__news-container--container'));
+
+  const tl = gsap.timeline()
+
+  newsContainer.forEach((container,index) => {
+    container.children[4].addEventListener('mouseenter',() => {
+        console.log('you hovered on',container, "with index",index)
+        console.log(container.children[4].children[0])
+
+        gsap.to(container.children[4],{
+            x:30,
+            ease:"power3.inOut",
+            duration:1,
+        })
+
+        gsap.to(container.children[4].children[2],{
+            delay:0.8,
+            opacity:1,
+        
+            duration:0.5,
+            width:'8rem'
+           
+        })
+    })
+  })
+
+  
+
+  newsContainer.forEach((container,index) => {
+    container.children[4].addEventListener('mouseleave',() => {
+        console.log('you unhovered on',container, "with index:", index)
+        gsap.to(container.children[4].children[2],{
+            
+            opacity:0,
+            duration:0.5,
+            width:'0'
+           
+        })
+        
+        gsap.to(container.children[4],{
+            delay:0.3,
+            x:0,
+            ease:"power3.inOut",
+            duration:0.5,
+        })
+
+        // setTimeout(() => {
+        //     gsap.to(container.children[4].children[2],{
+            
+        //     opacity:0,
+        //     duration:0.5,
+        //     width:'0'
+           
+        // })
+        
+        // gsap.to(container.children[4],{
+        //     // delay:1.1,
+        //     x:0,
+        //     ease:"power3.inOut",
+        //     duration:0.5,
+        // })
+        // },1000)
+       
+    })
+
+  })
+});
+
+
+console.log({newsContainer})
 
 </script>
 
@@ -59,6 +139,7 @@ const news = [
     max-width: 100rem;
     margin: 0 auto;
     padding: 1rem 5rem;
+    margin-top: 4rem;
     
     font-family: "grotesk-regular";
 
@@ -91,6 +172,7 @@ const news = [
             gap:1rem;
             position: relative;
             height: 30rem;
+    cursor: pointer;
      
         width: 35%;
 
@@ -153,9 +235,19 @@ background: #DBFF00;
     align-items: center;
     position: absolute;
     bottom: 0;
+    transition: text-decoration 2s;
+    cursor:pointer;
 
     img{
         width: 2.5rem;
+    }
+
+    .underline{
+        position:absolute;
+        top:1.3rem;
+        opacity:0;
+        border-bottom:2px solid #DBFF00;
+        margin-top: 0.5rem;
     }
 }
 

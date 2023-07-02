@@ -16,6 +16,7 @@
     "loconative-scroll": "https://github.com/quentinhocde/loconative-scroll",
     "pinia": "^2.0.26",
     "sass": "^1.57.1",
+    "splitting": "^1.0.6",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
