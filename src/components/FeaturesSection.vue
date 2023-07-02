@@ -1,6 +1,6 @@
 <template>
     <div class="featuresSection">
-        <div class="featuresSection__title-container">
+        <div class="featuresSection__title-container" data-scroll>
             <p>Features</p>
             <h1>Our Promise To The Future</h1>
 </div>
