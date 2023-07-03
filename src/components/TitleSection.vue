@@ -400,6 +400,8 @@ onMounted(() => {
 
     h1 {
       font-size: 6rem;
+
+
     }
 
     button {
@@ -648,6 +650,10 @@ onMounted(() => {
     &__title-container {
       font-size: 1.6rem;
       text-align: center;
+
+      h1{
+        font-size: 3rem;
+      }
       p {
         font-size: 1rem;
       }
