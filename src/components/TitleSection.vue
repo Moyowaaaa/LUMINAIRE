@@ -52,8 +52,6 @@ import { onMounted } from "vue";
 onMounted(() => {
   const images = Array.from(document.querySelectorAll("#images"));
 
-  console.log({ images });
-
   images.forEach((image) => {
     image?.addEventListener("mouseenter", () => {
       gsap.set(image, {
@@ -81,8 +79,6 @@ onMounted(() => {
     });
   });
 });
-
-
 </script>
 
 <style lang="scss" scoped>
@@ -400,8 +396,6 @@ onMounted(() => {
 
     h1 {
       font-size: 6rem;
-
-
     }
 
     button {
@@ -651,7 +645,7 @@ onMounted(() => {
       font-size: 1.6rem;
       text-align: center;
 
-      h1{
+      h1 {
         font-size: 3rem;
       }
       p {

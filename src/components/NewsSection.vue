@@ -1,7 +1,7 @@
 <template>
     <div class="newsSection">
         <div class="newsSection__title-container">
-            <p>News</p>
+            <p id="smallTitleText">News</p>
             <h1>Stories Behind The Wheel</h1>
 </div>
 <div class="newsSection__news-container" >
@@ -66,8 +66,6 @@ onMounted(() => {
 
   newsContainer.forEach((container,index) => {
     container.children[4].addEventListener('mouseenter',() => {
-        console.log('you hovered on',container, "with index",index)
-        console.log(container.children[4].children[0])
 
         gsap.to(container.children[4],{
             x:30,
@@ -90,7 +88,7 @@ onMounted(() => {
 
   newsContainer.forEach((container,index) => {
     container.children[4].addEventListener('mouseleave',() => {
-        console.log('you unhovered on',container, "with index:", index)
+
         gsap.to(container.children[4].children[2],{
             
             opacity:0,
@@ -106,30 +104,26 @@ onMounted(() => {
             duration:0.5,
         })
 
-        // setTimeout(() => {
-        //     gsap.to(container.children[4].children[2],{
-            
-        //     opacity:0,
-        //     duration:0.5,
-        //     width:'0'
-           
-        // })
-        
-        // gsap.to(container.children[4],{
-        //     // delay:1.1,
-        //     x:0,
-        //     ease:"power3.inOut",
-        //     duration:0.5,
-        // })
-        // },1000)
-       
+      
     })
 
+  })
+
+  tl.from('#smallTitleText', {
+    y:10,
+    duration:1.2,
+    ease:"power3.inOut",
+    opacity:0,
+    scrollTrigger:{
+        trigger:'#smallTitleText',
+        scrub:true
+        
+    }
   })
 });
 
 
-console.log({newsContainer})
+
 
 </script>
 
