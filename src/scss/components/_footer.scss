@@ -52,7 +52,7 @@
       border-top: 1px solid #dbff00;
   
       p {
-        // text-decoration: underline;
+        text-decoration: underline;
         color: #dbff00;
         font-size: 14px;
         font-family: "marope-regular";
@@ -85,6 +85,7 @@
       flex-wrap: wrap;
   
       p{
+        text-decoration: underline;
         &:nth-child(1){
           display: none;
         }

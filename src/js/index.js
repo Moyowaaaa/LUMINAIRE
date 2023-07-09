@@ -57,11 +57,11 @@ var mobile = 480;
       .map(flickerLetter)
       .map(colorLetter)
       .join('');
-  const neonGlory = target => target.innerHTML = flickerAndColorText(target.textContent);
+  const electicGlow = target => target.innerHTML = flickerAndColorText(target.textContent);
   
   
-  neonGlory(target);
-  target.onclick = ({ target }) =>  neonGlory(target);
+  electicGlow(target);
+  target.onclick = ({ target }) =>  electicGlow(target);
   
 
 
@@ -264,52 +264,6 @@ var mobile = 480;
           }
         );
       }
-
-      // const tl = gsap.timeline({scrollTrigger:{
-      //   trigger:statContainer,
-      //   scrub:scrub
-      // }})
-
-      // tl.to(statContainer, {
-      //   duration: 1,
-      //   ease: "power3.inOut",
-
-      //   scrollTrigger: {
-      //     trigger: statContainer,
-      //   },
-      // });
-
-      // tl.to(statContainer.children[0], {
-      //   width: "10rem",
-      //   duration: 1.2,
-      //   ease: "power3.inOut",
-      //   scrollTrigger: {
-      //     trigger: statContainer.children[0],
-      //   },
-      // });
-      // tl.from(statContainer.children[1], {
-      //   x: "-50px",
-      //   opacity: 0,
-      //   duration: 1.2,
-      //   ease: "power3.inOut",
-      //   scrollTrigger: {
-      //     trigger: statContainer.children[0],
-      //   },
-      // });
-
-      // tl.fromTo(
-      //   statContainer.children[2],
-      //   { y: 0, opacity: 0 },
-      //   {
-      //     opacity: 1,
-      //     delay: 0.1,
-      //     duration: 0.4,
-      //     clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-      //     scrollTrigger: {
-      //       trigger: statContainer.children[2],
-      //     },
-      //   }
-      // );
     });
   });
 
