@@ -22,6 +22,7 @@
       <p>Privacy Policy</p>
       <p>Terms of Service</p>
       <p>Cookies Settings</p>
+      <p>{{ currentYear }} Luminaire. All right reserved.</p>
     </div>
   </div>
 </template>
@@ -92,6 +93,10 @@ let currentYear = ref<number | null>(new Date().getFullYear());
       font-size: 14px;
       font-family: "marope-regular";
       font-weight: 400;
+
+      &:nth-child(5){
+        display: none;
+      }
     }
   }
 }
@@ -114,6 +119,17 @@ let currentYear = ref<number | null>(new Date().getFullYear());
 
   .foot {
     flex-wrap: wrap;
+
+    p{
+      &:nth-child(1){
+        display: none;
+      }
+
+      &:nth-child(5){
+        display: block !important;
+      }
+
+    }
   }
 }
 

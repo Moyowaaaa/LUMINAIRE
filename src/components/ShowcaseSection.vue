@@ -55,7 +55,7 @@
 
 <script setup lang="ts">
 import { gsap } from "gsap";
-import { onMounted } from "vue";
+import { onMounted, watchEffect } from "vue";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { intersectionObserver } from "@/animation/useIntersectionObserver";
 gsap.registerPlugin(ScrollTrigger);
@@ -136,6 +136,10 @@ onMounted(() => {
     });
   });
 });
+
+
+
+
 </script>
 
 <style scoped lang="scss">
