@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <meta charset="UTF-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./android-chrome-192x192.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Superare NFTs" />
+    <meta
+			name="description"
+			content="UI/UX designer"
+		/>
+<!-- Facebook Meta Tags -->
+    <meta property="og:type" content="website" />
+		<meta property="og:title" content="Superare NFTs " />
+		<meta property="og:url" content="https://siyanbade.vercel.app/" />
+		<meta
+			property="og:description"
+			content="Discover and collect super rare NFTs"
+		/>
+
+    <title>Superare NFTs</title>
+
+    <link rel="stylesheet" href="scss/index.scss" />
+    
+
+  </head>
+
+  <body>
+
+   
+
+    <div data-scroll-container class="container">
+<section>
+  <div class="navbar">
+    <div class="navbar__container">
+      <div>
+        <img src="./assets/images//logo.svg" alt="" />
+      </div>
+
+      <div class="navbar__container--right-container">
+        <div class="close-btn" ref="closebtnRef" @click="openMenu">
+          <svg viewBox="0 0 12 10" class="hamburger" height="40px" width="40px">
+            <path d="M10,2 L2,2" class="bar-1" id="bar-1"></path>
+            <path d="M2,5 L10,5" class="bar-2"></path>
+            <path d="M10,8 L2,8" class="bar-3"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="titleSection">
+    <div class="titleSection__title-container">
+     
+        <h1 class="content__title" data-splitting data-effect3>
+          <span class="flicker">The Future is Electric.</span></h1>
+
+
+      
+      <p >Discover the new standard of luxury</p>
+      <button class="btn-effect">Reserve you own</button>
+    </div>
+
+    <div class="gridContainer">
+      <div class="gridContainer__container">
+        <div
+          class="gridContainer__container--longwidth-shortheight"
+          id="images"
+        >
+          <img src="./assets/images//titleImage1.png" />
+        </div>
+        <div class="gridContainer__container--longwidth-shorterheight">
+          <p>Electric Mobility</p>
+          <img src="./assets/images//horizontalbarmd.svg" alt="" />
+        </div>
+        <div class="gridContainer__container--bigwidth-bigheight" id="images">
+          <img src="./assets/images//titleImage3.png" />
+        </div>
+        <div class="gridContainer__container--minwidth-midheight">
+          <div>
+            <img src="./assets/images//verticalbarsm.svg" id="sm" />
+          </div>
+          <div>
+            <p data-animation="header">High Performance</p>
+          </div>
+          <div>
+            <img src="./assets/images//cross.svg" alt="" id="md" />
+          </div>
+        </div>
+        <div class="gridContainer__container--longwidth-longerheight">
+          <img src="./assets/images//titleImage2.png" />
+        </div>
+        <div class="gridContainer__container--veryshortheight-veryshortheight">
+          <p data-animation="paragraph">Cleaner Future</p>
+          <img src="./assets/images//horizontalbarsm.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="showcase-section">
+    <div class="showcase-section__container" data-scroll data-scroll-speed="-1">
+      <h1 class="title">Pick your Dream Car</h1>
+
+      <div class="showcase-section__container--stats-container">
+        <div
+          class="showcase-section__container--stats-container__stat-container"
+        >
+          <img src="./assets/images//statLine.svg" alt="" />
+          <p>EPA gas range</p>
+          <p><span class="data">32</span> mpg</p>
+        </div>
+
+        <div
+          class="showcase-section__container--stats-container__stat-container"
+        >
+          <img src="./assets/images//statLine.svg" alt="" />
+          <p>Drivetrain</p>
+          <p>All-wheel drive</p>
+        </div>
+
+        <div
+          class="showcase-section__container--stats-container__stat-container"
+        >
+          <img src="./assets/images//statLine.svg" alt="" />
+          <p>Max power</p>
+
+          <p>1200 hp</p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="showcase-section__cars-container"
+      data-scroll-speed="2"
+      data-scroll
+    >
+      <img src="./assets/images//rivian12md.png" alt="" />
+      <img src="./assets/images//rivian5md.png" alt="" />
+
+      <h1 class="large-number" data-scroll data-scroll-speed="-1">2</h1>
+      <img src="./assets/images//rivian10md.png" alt="" />
+    </div>
+
+    <div class="showcase-section__cars-container-mobile">
+      <img src="./assets/images//rivian5md.png" alt="" />
+    </div>
+
+    <div class="discover" id="discover">
+      Discover <img src="./assets/images//greenRightArrow.svg" alt="" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="featuresSection">
+    <div class="featuresSection__title-container">
+      <p id="smallFeaturesText">Features</p>
+      <h1>Our Promise To The Future</h1>
+    </div>
+
+    <div
+      class="featuresSection__showcase-container"
+      data-scroll
+      data-scroll-speed="-1"
+    >
+      <div class="featuresSection__showcase-container--top-section">
+        <div class="featuresSection__showcase-container--top-section__left-box">
+          <div class="cross">
+            <img src="./assets/images//horizontalLinelong.png" />
+            <img src="./assets/images//horizontalLinelong.png" />
+          </div>
+
+          <div
+            class="featuresSection__showcase-container--top-section__left-box--text-container"
+          >
+            <h1>Functional Aesthetics</h1>
+
+            <p>
+              A mission to find the optimal balance between cooling and
+              performance to withstand its inevitably heavier weight.
+            </p>
+          </div>
+
+          <img
+            src="./assets/images//horizontalLineThick.png"
+            alt=""
+            class="thick"
+          />
+
+          <div class="discover" id="discover">
+            <p data-animation="paragraph">Discover</p>
+            <img src="./assets/images//blackRightArrow.svg" alt="" />
+          </div>
+        </div>
+        <div
+          class="featuresSection__showcase-container--top-section__right-box"
+        >
+          <div class="text-container">
+            <div class="text-container__text-box">
+              <h1>
+                Finding <br />
+                Optimal Balance
+              </h1>
+
+              <p data-animation="paragraph">
+                Feel the road beneath you. See the sky above. Hear the music
+                around you.
+              </p>
+            </div>
+
+            <div class="text-container__discover" id="discover">
+              <p data-animation="paragraph">Discover</p>
+              <img src="./assets/images//blackRightArrow.svg" alt="" />
+            </div>
+          </div>
+          <img src="./assets/images//polestarphoto11.webp" />
+        </div>
+      </div>
+
+      <div class="featuresSection__showcase-container--bottom-section">
+        <div
+          class="featuresSection__showcase-container--bottom-section__left-box"
+        >
+          <img src="./assets/images//faraday.webp" alt="" />
+        </div>
+
+        <div
+          class="featuresSection__showcase-container--bottom-section__right-box"
+        >
+          <div
+            class="featuresSection__showcase-container--bottom-section__right-box--text-container"
+          >
+            <h1>Electrifying Experience</h1>
+
+            <p>Integrating high performance technology into a new design.</p>
+          </div>
+
+          <img
+            src="./assets/images//horizontalLineThick.png"
+            alt=""
+            class="thick"
+          />
+
+          <div class="discover" id="discover">
+            <p data-animation="paragraph">Discover</p>
+            <img src="./assets/images//blackRightArrow.svg" alt="" />
+          </div>
+
+          <div class="cross">
+            <img src="./assets/images//horizontalLinelong.png" />
+            <img src="./assets/images//horizontalLinelong.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="newsSection">
+    <div class="newsSection__title-container">
+        <p id="smallTitleText">News</p>
+        <h1>Stories Behind The Wheel</h1>
+</div>
+<div class="newsSection__news-container" >
+
+
+<div class="newsSection__news-container--container">
+<div class="newsSection__news-container--container__ImageContainer" :key="index">
+    <div class="image-container">
+        <img src="./assets/images/polestarphoto2.webp" :alt=""/>
+     </div>
+    
+    </div>
+
+    <div class="flexer">
+        <div>Lifestyle</div>
+
+        <div>10 min read</div>
+    </div>
+
+  
+    <h1>The pinnacle of electric performance</h1>
+    <p>Introducing our new ultra-high-performance brand — the world’s first fully electric luxury super-sports car.</p>
+
+
+    <div class="newsSection__news-container--container__discover">
+            <p>Discover</p>
+            <img src="./assets/images/greenRightArrow.svg" alt=""/>
+
+            <div class="underline"></div>
+</div>
+
+
+</div>
+
+<div class="newsSection__news-container--container" v-for="(article, index) in news">
+  <div class="newsSection__news-container--container__ImageContainer" :key="index">
+      <div class="image-container">
+          <img src="./assets/images/polestarphoto16.webp"  :alt="article.title"/>
+       </div>
+      
+      </div>
+  
+      <div class="flexer">
+          <div>Lifestyle</div>
+  
+          <div>7 min read</div>
+      </div>
+  
+    
+      <h1>Beyond charging vehicles</h1>
+      <p>Hear about the new ways electric vehicles are powering up  offices and transforming remote businesses</p>
+  
+  
+      <div class="newsSection__news-container--container__discover">
+              <p>Discover</p>
+              <img src="./assets/images//greenRightArrow.svg" alt=""/>
+  
+              <div class="underline"></div>
+  </div>
+  
+  
+  </div>
+
+  <div class="newsSection__news-container--container" v-for="(article, index) in news">
+    <div class="newsSection__news-container--container__ImageContainer" :key="index">
+        <div class="image-container">
+            <img src="./assets/images/polestarphoto6.webp"  :alt="article.title"/>
+         </div>
+        
+        </div>
+    
+        <div class="flexer">
+            <div>Lifestyle</div>
+    
+            <div>5 min read</div>
+        </div>
+    
+      
+        <h1>Never-ending road trip</h1>
+        <p>How the expanding electric network is changing the way  families plan for vacations</p>
+    
+    
+        <div class="newsSection__news-container--container__discover">
+                <p>Discover</p>
+                <img src="./assets/images//greenRightArrow.svg" alt=""/>
+    
+                <div class="underline"></div>
+    </div>
+    
+    
+    </div>
+
+
+</div>
+</div>
+</section>
+
+<section>
+  <div class="subscribeSection">
+    <!-- <img src="./assets/images//rivianSubscribe.png"/> -->
+    <div class="subscribeSection__container">
+      <div class="subscribeSection__container--text-container">
+        <img
+          src="./assets/images//horizontalLinelong.png"
+          id="lightHorizontalLine"
+          class="light"
+        />
+
+        <div class="container" data-scroll-speed="2" data-scroll>
+          <h1>
+            Stay up to speed
+            <br />
+            on the latest
+          </h1>
+          <p>
+            By clicking Sign Up you're confirming that you agree with our Terms
+            and Conditions.
+          </p>
+
+          <input type="text" placeholder="Enter your email" />
+
+          <button class="btn-effect">Sign Up</button>
+        </div>
+
+        <img
+          src="./assets/images//horizontalLineThick.png"
+          alt=""
+          class="thick"
+        />
+      </div>
+
+      <div class="subscribeSection__container--image-container">
+        <img src="./assets/images//rivianSubscribemd.png" />
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section>
+  <div class="footer-section">
+    <img src="./assets/images//footerLogo.svg" alt="" class="logo" />
+    <div class="footer-section__links-container">
+      <p>Fleet</p>
+      <p>Features</p>
+      <p>Stories</p>
+      <p>Investors</p>
+      <p>FAQ</p>
+    </div>
+
+    <div class="footer-section__socials-container">
+      <img src="./assets/images//Facebook.svg" alt="facebook" />
+      <img src="./assets/images//Instagram.svg" alt="Instagram" />
+      <img src="./assets/images//Twitter.svg" alt="Twitter" />
+
+      <img src="./assets/images//LinkedIn.svg" alt="Linkedin" />
+    </div>
+
+    <div class="foot">
+      <p><span id="year"></span> Luminaire. All right reserved.</p>
+      <p>Privacy Policy</p>
+      <p>Terms of Service</p>
+      <p>Cookies Settings</p>
+      <p><span id="year"></span> Luminaire. All right reserved.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+      </div>  
+
+  
+    <script src="./js/index.js" type="module"></script>
+
+
+  </body>
+</html>

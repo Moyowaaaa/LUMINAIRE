@@ -1,0 +1,73 @@
+
+.navbar {
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 1rem 5rem;
+  
+    box-sizing: border-box;
+  
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &--right-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+    }
+  
+    button {
+      background: transparent;
+      color: #ffffff;
+      border-radius: 5px;
+      padding: 0.5rem;
+      font-family: "grotesk-regular";
+      border: 1px solid #dbff00;
+      font-size: 1.125rem;
+  
+      &:hover {
+        transition: 0.5s;
+        box-shadow: 6px 3px 0 transparent;
+        background: linear-gradient(150deg, #a53de2 110.61%, #ff3c5f 155.21%);
+        cursor: pointer;
+        color: white;
+        scale: 1.1;
+      }
+    }
+    .hamburger {
+      cursor: pointer;
+  
+      #bar-1 {
+        fill: none;
+        stroke: #dbff00;
+        stroke-linecap: round;
+      }
+  
+      path {
+        fill: none;
+        stroke: white;
+        stroke-linecap: round;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 485px) {
+    .navbar {
+      padding: 1rem;
+      &__container {
+        width: 100%;
+  
+        div {
+          img {
+            width: 7rem;
+          }
+        }
+  
+        &--right-container {
+          display: none;
+        }
+      }
+    }
+  }
