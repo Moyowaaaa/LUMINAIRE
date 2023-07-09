@@ -35,7 +35,7 @@ var mobile = 480;
 
   const titleText = [...document.querySelectorAll('.content__title[data-splitting][data-effect3]')];
 
-  console.log(titleText)
+ 
   
   titleText.forEach((text) => {
     Splitting({
@@ -70,6 +70,25 @@ var mobile = 480;
     const images = Array.from(document.querySelectorAll("#images"));
   
     images.forEach((image) => {
+      gsap.set(image, {
+        display: "inline-block",
+        cursor: "pointer",
+        overflow: "hidden",
+        borderRadius: "10px",
+      });
+
+      gsap.fromTo(image.children[0],{
+        transform: "scale(1.3)",
+        ease: "power3.inOut",
+        duration: 1,
+        borderRadius: "10px",
+      },{
+        transform: "scale(1)",
+        ease: "power3.inOut",
+        duration: 2,
+        borderRadius: "10px",
+      })
+
       image?.addEventListener("mouseenter", () => {
         gsap.set(image, {
           display: "inline-block",
@@ -150,46 +169,147 @@ var mobile = 480;
         visibility: "visible",
       });
 
-      gsap.to(statContainer, {
-        duration: 1,
-        ease: "power3.inOut",
-
-        scrollTrigger: {
-          trigger: statContainer,
-        },
-      });
-
-      gsap.to(statContainer.children[0], {
-        width: "10rem",
-        duration: 1.2,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: statContainer.children[0],
-        },
-      });
-      gsap.from(statContainer.children[1], {
-        x: "-50px",
-        opacity: 0,
-        duration: 1.2,
-        ease: "power3.inOut",
-        scrollTrigger: {
-          trigger: statContainer.children[0],
-        },
-      });
-
-      gsap.fromTo(
-        statContainer.children[2],
-        { y: 0, opacity: 0 },
-        {
-          opacity: 1,
-          delay: 0.1,
-          duration: 0.4,
-          clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+      let scrub;
+      if (viewport > mobile) {
+        const tl = gsap.timeline({scrollTrigger:{
+          trigger:statContainer,
+          scrub:0.1
+        }})
+  
+        tl.to(statContainer, {
+          duration: 1,
+          ease: "power3.inOut",
+  
           scrollTrigger: {
-            trigger: statContainer.children[2],
+            trigger: statContainer,
           },
-        }
-      );
+        });
+  
+        tl.to(statContainer.children[0], {
+          width: "10rem",
+          duration: 1.2,
+          ease: "power3.inOut",
+          scrollTrigger: {
+            trigger: statContainer.children[0],
+          },
+        });
+        tl.from(statContainer.children[1], {
+          x: "-50px",
+          opacity: 0,
+          duration: 1.2,
+          ease: "power3.inOut",
+          scrollTrigger: {
+            trigger: statContainer.children[0],
+          },
+        });
+  
+        tl.fromTo(
+          statContainer.children[2],
+          { y: 0, opacity: 0 },
+          {
+            opacity: 1,
+            delay: 0.1,
+            duration: 0.4,
+            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+            scrollTrigger: {
+              trigger: statContainer.children[2],
+            },
+          }
+        );
+
+      } else {
+        const tl = gsap.timeline({scrollTrigger:{
+          trigger:statContainer,
+          scrub:scrub
+        }})
+  
+        gsap.to(statContainer, {
+          duration: 1,
+          ease: "power3.inOut",
+  
+          scrollTrigger: {
+            trigger: statContainer,
+          },
+        });
+  
+        gsap.to(statContainer.children[0], {
+          width: "10rem",
+          duration: 1.2,
+          ease: "power3.inOut",
+          scrollTrigger: {
+            trigger: statContainer.children[0],
+          },
+        });
+        gsap.from(statContainer.children[1], {
+          x: "-50px",
+          opacity: 0,
+          duration: 1.2,
+          ease: "power3.inOut",
+          scrollTrigger: {
+            trigger: statContainer.children[0],
+          },
+        });
+  
+        gsap.fromTo(
+          statContainer.children[2],
+          { y: 0, opacity: 0 },
+          {
+            opacity: 1,
+            delay: 0.1,
+            duration: 0.4,
+            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+            scrollTrigger: {
+              trigger: statContainer.children[2],
+            },
+          }
+        );
+      }
+
+      // const tl = gsap.timeline({scrollTrigger:{
+      //   trigger:statContainer,
+      //   scrub:scrub
+      // }})
+
+      // tl.to(statContainer, {
+      //   duration: 1,
+      //   ease: "power3.inOut",
+
+      //   scrollTrigger: {
+      //     trigger: statContainer,
+      //   },
+      // });
+
+      // tl.to(statContainer.children[0], {
+      //   width: "10rem",
+      //   duration: 1.2,
+      //   ease: "power3.inOut",
+      //   scrollTrigger: {
+      //     trigger: statContainer.children[0],
+      //   },
+      // });
+      // tl.from(statContainer.children[1], {
+      //   x: "-50px",
+      //   opacity: 0,
+      //   duration: 1.2,
+      //   ease: "power3.inOut",
+      //   scrollTrigger: {
+      //     trigger: statContainer.children[0],
+      //   },
+      // });
+
+      // tl.fromTo(
+      //   statContainer.children[2],
+      //   { y: 0, opacity: 0 },
+      //   {
+      //     opacity: 1,
+      //     delay: 0.1,
+      //     duration: 0.4,
+      //     clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+      //     scrollTrigger: {
+      //       trigger: statContainer.children[2],
+      //     },
+      //   }
+      // );
     });
   });
 
@@ -255,20 +375,26 @@ newsContainer.forEach((container,index) => {
 
 })
 
-tl.from('#smallTitleText', {
-  y:10,
-  duration:1.2,
-  ease:"power3.inOut",
-  opacity:0,
-  scrollTrigger:{
-      trigger:'#smallTitleText',
-      scrub:true
-      
-  }
+const smallTitleText =  Array.from(document.querySelectorAll('#smallTitleText'));
+
+smallTitleText.forEach((text) => {
+  tl.from(text, {
+    y:10,
+    duration:1.2,
+    ease:"power3.inOut",
+    opacity:0,
+    scrollTrigger:{
+        trigger:text,
+        scrub:true
+        
+    }
+  })
+  
 })
 
+
 const year = document.querySelectorAll('#year')
-console.log(year)
+
 
 year.forEach((y) => {
     y.innerHTML = new Date().getFullYear()

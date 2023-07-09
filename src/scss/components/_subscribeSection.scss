@@ -198,15 +198,15 @@
     }
   }
   
-  .btn-effect {
+  .bbtn-effect {
     position: relative;
   
     cursor: pointer;
     transition: color 350ms ease-in-out;
   }
   
-  .btn-effect::before,
-  .btn-effect::after {
+  .bbtn-effect::before,
+  .bbtn-effect::after {
     content: "";
     position: absolute;
     top: -3px;
@@ -217,26 +217,26 @@
     border-radius: 10px;
   }
   
-  .btn-effect::before {
+  .bbtn-effect::before {
     border-left: 3px solid black;
     border-bottom: 3px solid black;
     left: -3px;
     transform-origin: 0 100%;
   }
   
-  .btn-effect::after {
+  .bbtn-effect::after {
     border-right: 3px solid black;
     border-top: 3px solid black;
     right: -3px;
     transform-origin: 100% 0;
   }
   
-  .btn-effect:hover::after,
-  .btn-effect:hover::before {
+  .bbtn-effect:hover::after,
+  .bbtn-effect:hover::before {
     transform: scale(1);
   }
   
-  .btn-effect:hover {
+  .bbtn-effect:hover {
     background-color: transparent !important;
     color: black !important;
     border: none;

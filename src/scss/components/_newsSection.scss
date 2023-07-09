@@ -154,8 +154,18 @@ background: #DBFF00;
                         flex-direction: column;
 
                         &--container{
-                            width: 95%;
-                            margin: auto
+                            width: 90%;
+                            margin: auto;
+
+                            &__ImageContainer{
+                                height: max-content;
+                               
+                                .image-container{
+                                    left:0;
+                                    top:0;
+                                    height: max-content
+                                }
+                            }
                         }
                     }
                 };
@@ -165,7 +175,7 @@ background: #DBFF00;
             @media screen and (min-width:500px) and (max-width:900px) {
                 .newsSection{
                     max-width: 100%;
-
+                    margin-top: 10rem;
                     &__title-container{
                         padding: 2rem 0;
                     }
