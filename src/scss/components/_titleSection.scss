@@ -297,7 +297,9 @@
         text-align: center;
   
         h1 {
-          font-size: 3rem;
+          font-size: 3.4rem;
+        
+        
         }
         p {
           font-size: 1rem;
@@ -310,6 +312,11 @@
   }
   
   @media (min-width: 500px) and (max-width: 900px) {
+    .titleSection{
+      &__title-container{
+        text-align: center;
+      }
+    }
     .gridContainer__container {
       grid-template-areas:
         "a a b b"
