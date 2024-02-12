@@ -49,7 +49,7 @@ new Promise((resolve, reject) => {
   });
   Promise.all(promises).then(() => {
     const container = document.querySelector("#body");
-    container.style.display = "block"; // Update to "block" to show the container
+    container.style.display = "block";
   });
 });
 
